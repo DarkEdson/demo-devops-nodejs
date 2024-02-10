@@ -1,0 +1,45 @@
+version: "3"  
+
+services:
+  postgresql:
+    image: bitnami/postgresql:latest
+    container_name: postgresql
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_USERNAME=bn_sonarqube
+      - POSTGRESQL_PASSWORD=bitnami
+      - POSTGRESQL_DATABASE=bitnami_sonarqube
+    volumes:
+      - postgresql_data:/bitnami/postgresql
+    networks:
+      - sonarqube-network
+
+  sonarqube:
+    image: bitnami/sonarqube:latest
+    container_name: sonarqube
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9009:9000"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - SONARQUBE_DATABASE_HOST=postgresql
+      - SONARQUBE_DATABASE_PORT_NUMBER=5432
+      - SONARQUBE_DATABASE_USER=bn_sonarqube
+      - SONARQUBE_DATABASE_PASSWORD=bitnami
+      - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
+    volumes:
+      - sonarqube_data:/bitnami/sonarqube
+    depends_on:
+      - postgresql
+    networks:
+      - sonarqube-network
+
+volumes:
+  postgresql_data:
+    driver: local
+  sonarqube_data:
+    driver: local
+
+networks:
+  sonarqube-network:
