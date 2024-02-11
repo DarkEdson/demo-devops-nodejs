@@ -40,11 +40,10 @@ pipeline {
         stage('Run tests and generate coverage report') {
             agent any
             steps {
-                sh 'npm test'
+                sh 'echo TESTS'
             }
             post {
                 always {
-                    sh 'npm install -g nyc'
                     sh 'nyc --reporter=lcov --report-dir=coverage npm test'
                     publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'coverage', reportFiles: 'index.html', reportName: 'Code Coverage Report',reportTitles: 'The Code Coverage Report'])
                 }
