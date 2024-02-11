@@ -12,6 +12,7 @@ spec:
       labels:
         app: mi-aplicacion
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: mi-contenedor
         image: darkedson/test-repo
@@ -33,6 +34,10 @@ spec:
               key: DATABASE_PASSWORD
         ports:
         - containerPort: 8000
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "0.5"
         volumes:
         - name: config-volume
           configMap:

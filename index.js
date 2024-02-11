@@ -1,6 +1,5 @@
 import sequelize from './shared/database/database.js'
 import { usersRouter } from "./users/router.js"
-import fs from 'fs';
 import express from 'express'
 
 const app = express()
