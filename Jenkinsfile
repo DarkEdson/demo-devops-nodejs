@@ -5,10 +5,10 @@ pipeline {
     }
 
     environment {
-        DOCKER_REGISTRY = 'darkedson/test-repo'
+        DOCKER_REGISTRY = 'darkedson'
         NODE_IMAGE = 'Node18.15'
         SONARQUBE_SERVER = 'SonarQ'
-        DOCKER_IMAGE_NAME = 'devops-nodejs'
+        DOCKER_IMAGE_NAME = 'test-repo'
     }
 
     stages {
