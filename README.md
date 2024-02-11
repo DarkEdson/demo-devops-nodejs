@@ -5,7 +5,7 @@ Este proyecto es una aplicación Node.js que se despliega en Kubernetes y utiliz
 ## Instalación
 
 1. Clona este repositorio:
-git clone https://github.com/tu-usuario/tu-proyecto.git
+git clone https://github.com/DarkEdson/demo-devops-nodejs.git
 
 2. Configura tu entorno de desarrollo:
 
