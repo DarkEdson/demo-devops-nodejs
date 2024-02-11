@@ -10,6 +10,7 @@ pipeline {
 
     stages {
         stage('Checkout'){
+            agent any
             steps{
                 git branch: 'develop',
                 credentialsId: 'github2',
@@ -18,6 +19,7 @@ pipeline {
         }
 
         stage('Install kubectl') {
+            agent any
             steps {
                 // Instalar kubectl en el contenedor de Jenkins
                 sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
@@ -53,6 +55,7 @@ pipeline {
         }
         
         stage("Quality Gate") {
+            agent any
             steps {
                 timeout(time: 20, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
