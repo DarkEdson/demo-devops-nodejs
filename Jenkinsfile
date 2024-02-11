@@ -11,6 +11,14 @@ pipeline {
     }
 
     stages {
+        stage('Checkout'){
+            steps{
+                git branch: 'develop',
+                credentialsId: 'github2',
+                url: 'git@github.com:DarkEdson/demo-devops-nodejs.git'
+            }
+        }
+
         stage('Install kubectl') {
             steps {
                 // Instalar kubectl en el contenedor de Jenkins
