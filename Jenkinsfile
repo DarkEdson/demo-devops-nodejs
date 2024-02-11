@@ -48,7 +48,7 @@ pipeline {
             sh 'npm install -g nyc'
             sh 'nyc --reporter=lcov --report-dir=coverage npm test'
             // Archivar los resultados del informe de cobertura
-            publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'coverage', reportFiles: 'index.html'], reportName: 'Code Coverage Report')
+            publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'coverage', reportFiles: 'index.html', reportName: 'Code Coverage Report',reportTitles: 'The Code Coverage Report'])
         }
     }
         }
