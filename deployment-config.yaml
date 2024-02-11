@@ -109,8 +109,9 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"  
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  ingressClassName: nginx
   rules:
-  - host: mi-aplicacion.com
+  - host: mi-aplicacion.127.0.0.1.nip.io
     http:
       paths:
       - path: /
