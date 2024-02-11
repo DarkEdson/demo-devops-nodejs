@@ -55,6 +55,8 @@ kubectl apply -f deployment-config.yaml
 ![Sonar Evidencia](sonarimage1.jpg)
 ![Sonar Evidencia continuacion](sonarimage2.jpg)
 
+## Confirmando Acceso a Pods Healthcheck en Api /health
+![confirmacion de health](confirm_health_check.jpg)
 
 
 ## Contribución
