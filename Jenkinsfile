@@ -94,7 +94,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             agent any
             steps {
-                sh 'kubectl apply -f deployment-config.yaml --validate=false'
+                sh 'kubectl apply -f deployment-config.yaml'
             }
         }
 
