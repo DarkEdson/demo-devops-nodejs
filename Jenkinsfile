@@ -12,7 +12,6 @@ pipeline {
 
     stages {
         stage('Install kubectl') {
-            agent any
             steps {
                 // Instalar kubectl en el contenedor de Jenkins
                 sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
@@ -47,13 +46,11 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            agent {
-                label 'Node18.15'
-            }
+        stage("Quality Gate") {
             steps {
-                // Compilar el código Node si es necesario
-                // sh 'npm run build'
+                timeout(time: 20, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
         
