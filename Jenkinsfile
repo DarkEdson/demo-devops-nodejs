@@ -97,7 +97,6 @@ pipeline {
         stage('Deploy to Kubernetes') {
             agent any
             steps {
-                sh 'kubectl delete -f deployment-config.yaml'
                 sh 'kubectl apply -f deployment-config.yaml'
             }
         }
