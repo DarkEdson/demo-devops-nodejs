@@ -1,145 +1,72 @@
-# Demo Devops NodeJs
+# Nombre del Proyecto
 
-This is a simple application to be used in the technical test of DevOps.
+Este proyecto es una aplicación Node.js que se despliega en Kubernetes y utiliza Jenkins para la CI/CD. Incluye configuraciones de Docker, SonarQube, y una base de datos PostgreSQL.
 
-## Getting Started
+## Instalación
 
-### Prerequisites
+1. Clona este repositorio:
+git clone https://github.com/tu-usuario/tu-proyecto.git
 
-- Node.js 18.15.0
+2. Configura tu entorno de desarrollo:
 
-### Installation
+cd tu-proyecto
+docker-compose up -d
 
-Clone this repo.
+3. Accede a la aplicación en tu navegador web:
 
-```bash
-git clone https://bitbucket.org/devsu/demo-devops-nodejs.git
-```
+http://localhost:8000
 
-Install dependencies.
+## Uso
 
-```bash
-npm i
-```
+- Para ejecutar la aplicación localmente, ejecuta el siguiente comando:
 
-### Database
+npm start
 
-The database is generated as a file in the main path when the project is first run, and its name is `dev.sqlite`.
+- Para ejecutar las pruebas, utiliza el siguiente comando:
 
-Consider giving access permissions to the file for proper functioning.
+npm test
 
-## Usage
+- Para desplegar la aplicación en Kubernetes, asegúrate de tener configurado `kubectl` y ejecuta el siguiente comando:
 
-To run tests you can use this command.
+kubectl apply -f deployment-config.yaml
 
-```bash
-npm run test
-```
+## Estructura del Proyecto
 
-To run locally the project you can use this command.
+- **docker-compose.yml**: Archivo de configuración de Docker Compose.
+- **deployment-config.yaml**: Archivo de configuración de Kubernetes para el despliegue.
+- **jenkinsfile**: Archivo Jenkinsfile para la pipeline CI/CD.
+- **dockerfile**: Archivo Dockerfile para la imagen de Docker.
+- **sonar-project.properties**: Configuración de SonarQube.
+- **index.js**: Archivo que contiene el código fuente principal de la aplicación.
+- **index.test.js**: Archivo que contiene las pruebas automatizadas.
 
-```bash
-npm run start
-```
+## Diagrama de Arquitectura General
+![Diagrama de Arquitectura General](infrageneral.drawio.png)
 
-Open http://localhost:8000/api/users with your browser to see the result.
+## Diagrama de Pipeline en Jenkins
+![Diagrama de Pipeline en Jenkins](pipeline.drawio.png)
 
-### Features
-
-These services can perform,
-
-#### Create User
-
-To create a user, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: POST
-```
-
-```json
-{
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "error": "error"
-}
-```
-
-#### Get Users
-
-To get all users, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-[
-    {
-        "id": 1,
-        "dni": "dni",
-        "name": "name"
-    }
-]
-```
-
-#### Get User
-
-To get an user, the endpoint **/api/users/<id>** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the user id does not exist, we will receive status 404 and the following message:
-
-```json
-{
-    "error": "User not found: <id>"
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "errors": [
-        "error"
-    ]
-}
-```
-
-## License
-
-Copyright © 2023 Devsu. All rights reserved.
+## Evidencias del proyecto
+### Pipelines Completados
+![Pipelines Completados](jenkins-pipelines.jpg)
+### Jenkins Sonar Completado
+![Jenkins Sonar Completado](sonarqube-jenkins-ok.jpg)
+### Sonar Evidencia
+![Sonar Evidencia](sonarimage1.jpg)
+![Sonar Evidencia continuacion](sonarimage2.jpg)
 
 
-README 2.2
+
+## Contribución
+
+Si quieres contribuir a este proyecto, sigue estos pasos:
+
+1. Realiza un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Agrega una nueva característica'`).
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
+5. Abre una solicitud de extracción.
+
+## Licencia
+
+Este proyecto está licenciado bajo [Licencia MIT](LICENSE).

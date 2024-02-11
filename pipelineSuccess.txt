@@ -1,0 +1,1008 @@
+Started by user edson aju
+Obtained Jenkinsfile from git git@github.com:DarkEdson/demo-devops-nodejs.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+ > git rev-list --no-walk 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D develop # timeout=10
+ > git checkout -b develop 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Install kubectl)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt
++ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.29.1/bin/linux/amd64/kubectl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  2 47.4M    2 1326k    0     0   597k      0  0:01:21  0:00:02  0:01:19  600k
+  6 47.4M    6 3326k    0     0  1036k      0  0:00:46  0:00:03  0:00:43 1039k
+ 11 47.4M   11 5694k    0     0  1354k      0  0:00:35  0:00:04  0:00:31 1357k
+ 18 47.4M   18 8942k    0     0  1714k      0  0:00:28  0:00:05  0:00:23 1805k
+ 28 47.4M   28 13.3M    0     0  2206k      0  0:00:21  0:00:06  0:00:15 2840k
+ 37 47.4M   37 17.6M    0     0  2512k      0  0:00:19  0:00:07  0:00:12 3365k
+ 47 47.4M   47 22.2M    0     0  2781k      0  0:00:17  0:00:08  0:00:09 3900k
+ 54 47.4M   54 25.9M    0     0  2887k      0  0:00:16  0:00:09  0:00:07 4176k
+ 62 47.4M   62 29.4M    0     0  2951k      0  0:00:16  0:00:10  0:00:06 4241k
+ 71 47.4M   71 33.9M    0     0  3101k      0  0:00:15  0:00:11  0:00:04 4212k
+ 77 47.4M   77 36.9M    0     0  3099k      0  0:00:15  0:00:12  0:00:03 3943k
+ 82 47.4M   82 39.0M    0     0  2980k      0  0:00:16  0:00:13  0:00:03 3294k
+ 82 47.4M   82 39.0M    0     0  2786k      0  0:00:17  0:00:14  0:00:03 2606k
+ 82 47.4M   82 39.1M    0     0  2638k      0  0:00:18  0:00:15  0:00:03 1996k
+ 83 47.4M   83 39.4M    0     0  2432k      0  0:00:19  0:00:16  0:00:03 1039k
+ 83 47.4M   83 39.6M    0     0  2358k      0  0:00:20  0:00:17  0:00:03  550k
+ 84 47.4M   84 39.9M    0     0  2150k      0  0:00:22  0:00:19  0:00:03  162k
+ 84 47.4M   84 39.9M    0     0  2127k      0  0:00:22  0:00:19  0:00:03  190k
+ 88 47.4M   88 42.1M    0     0  2133k      0  0:00:22  0:00:20  0:00:02  598k
+ 93 47.4M   93 44.3M    0     0  2135k      0  0:00:22  0:00:21  0:00:01 1081k
+ 98 47.4M   98 46.7M    0     0  2154k      0  0:00:22  0:00:22 --:--:-- 1454k
+100 47.4M  100 47.4M    0     0  2116k      0  0:00:22  0:00:22 --:--:-- 1952k
+[Pipeline] sh
++ chmod +x ./kubectl
+[Pipeline] sh
++ mv ./kubectl /usr/local/bin/kubectl
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Install dependencies)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ npm install
+
+up to date, audited 601 packages in 14s
+
+48 packages are looking for funding
+  run `npm fund` for details
+
+3 vulnerabilities (1 moderate, 1 high, 1 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run tests and generate coverage report)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ echo TESTS
+TESTS
+Post stage
+[Pipeline] sh
++ nyc --reporter=lcov --report-dir=coverage npm test
+
+> demo@1.0.0 test
+> jest --coverage
+
+  console.log
+    undefined
+
+      at Object.log (index.js:23:9)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Server running on port PORT 8000
+
+      at Server.log (index.js:19:13)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA foreign_keys = OFF
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA foreign_keys = OFF
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA foreign_keys = ON
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA foreign_keys = ON
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): DROP TABLE IF EXISTS `users`;
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL, `dni` VARCHAR(255) NOT NULL UNIQUE);
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL, `dni` VARCHAR(255) NOT NULL UNIQUE);
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA INDEX_LIST(`users`)
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA INDEX_LIST(`users`)
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+
+  console.log
+    Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_users_1`)
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+          at Array.map (<anonymous>)
+
+  console.log
+    Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_users_1`)
+
+      at Sequelize.log (node_modules/sequelize/src/sequelize.js:1280:15)
+          at Array.map (<anonymous>)
+
+PASS ./index.test.js (6.973 s)
+  User
+    ✓ Get users (382 ms)
+    ✓ Get user (111 ms)
+    ✓ Create user (177 ms)
+    ✓ Health check (79 ms)
+
+---------------------------------|---------|----------|---------|---------|------------------------
+File                             | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
+---------------------------------|---------|----------|---------|---------|------------------------
+All files                        |   81.13 |       50 |   88.88 |   80.39 |                        
+ test-devops@2                   |     100 |      100 |     100 |     100 |                        
+  index.js                       |     100 |      100 |     100 |     100 |                        
+ test-devops@2/shared/database   |     100 |      100 |     100 |     100 |                        
+  database.js                    |     100 |      100 |     100 |     100 |                        
+ test-devops@2/shared/middleware |   71.42 |      100 |   66.66 |   66.66 |                        
+  validateSchema.js              |   71.42 |      100 |   66.66 |   66.66 | 13-15                  
+ test-devops@2/shared/schema     |     100 |      100 |     100 |     100 |                        
+  users.js                       |     100 |      100 |     100 |     100 |                        
+ test-devops@2/users             |   73.33 |       50 |     100 |   73.33 |                        
+  controller.js                  |      68 |       50 |     100 |      68 | 9-10,20,25-26,36,43-44 
+  model.js                       |     100 |      100 |     100 |     100 |                        
+  router.js                      |     100 |      100 |     100 |     100 |                        
+---------------------------------|---------|----------|---------|---------|------------------------
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        12.522 s, estimated 15 s
+Ran all test suites.
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at BUILD level /var/jenkins_home/workspace/test-devops@2/coverage to /var/jenkins_home/jobs/test-devops/builds/52/htmlreports/Code_20Coverage_20Report
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (SonarQube analysis)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withSonarQubeEnv
+Injecting SonarQube environment variables using the configuration: SonarQ
+[Pipeline] {
+[Pipeline] sh
++ /var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQ/bin/sonar-scanner
+INFO: Scanner configuration file: /var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQ/conf/sonar-scanner.properties
+INFO: Project root configuration file: /var/jenkins_home/workspace/test-devops@2/sonar-project.properties
+INFO: SonarScanner 5.0.1.3006
+INFO: Java 17.0.9 Eclipse Adoptium (64-bit)
+INFO: Linux 5.15.133.1-microsoft-standard-WSL2 amd64
+INFO: User cache: /var/jenkins_home/.sonar/cache
+INFO: Analyzing on SonarQube server 10.4.0.87240
+INFO: Default locale: "en", source code encoding: "UTF-8"
+INFO: Load global settings
+INFO: Load global settings (done) | time=322ms
+INFO: Server id: FD2E0B99-AY2UgeBusdqAZkEwRTcp
+INFO: User cache: /var/jenkins_home/.sonar/cache
+WARN: sonar.plugins.downloadOnlyRequired is false, so ALL available plugins will be downloaded
+INFO: Loading all plugins
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=1527ms
+INFO: Load/download plugins
+INFO: Load/download plugins (done) | time=2235ms
+INFO: Process project properties
+INFO: Process project properties (done) | time=49ms
+INFO: Execute project builders
+INFO: Execute project builders (done) | time=14ms
+INFO: Project key: demo-devops
+INFO: Base dir: /var/jenkins_home/workspace/test-devops@2
+INFO: Working dir: /var/jenkins_home/workspace/test-devops@2/.scannerwork
+INFO: Load project settings for component key: 'demo-devops'
+INFO: Load project settings for component key: 'demo-devops' (done) | time=136ms
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=391ms
+INFO: Auto-configuring with CI 'Jenkins'
+INFO: Load active rules
+INFO: Load active rules (done) | time=11871ms
+INFO: Load analysis cache
+INFO: Load analysis cache (7.1 kB) | time=63ms
+INFO: Preprocessing files...
+INFO: 4 languages detected in 17 preprocessed files
+INFO: 9315 files ignored because of inclusion/exclusion patterns
+INFO: 24 files ignored because of scm ignore settings
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=45ms
+INFO: Indexing files...
+INFO: Project configuration:
+INFO:   Excluded sources: **/node_modules/**
+INFO: 17 files indexed
+INFO: Quality profile for docker: Sonar way
+INFO: Quality profile for js: Sonar way
+INFO: Quality profile for json: Sonar way
+INFO: Quality profile for yaml: Sonar way
+INFO: ------------- Run sensors on module demo-devops
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=86ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=16ms
+INFO: Sensor IaC CloudFormation Sensor [iac]
+INFO: 0 source files to be analyzed
+INFO: 0/0 source files have been analyzed
+INFO: Sensor IaC CloudFormation Sensor [iac] (done) | time=369ms
+INFO: Sensor IaC Kubernetes Sensor [iac]
+INFO: 1 source file to be analyzed
+INFO: 1/1 source file has been analyzed
+INFO: Sensor IaC Kubernetes Sensor [iac] (done) | time=3937ms
+INFO: Sensor IaC AzureResourceManager Sensor [iac]
+INFO: 0 source files to be analyzed
+INFO: 0/0 source files have been analyzed
+INFO: Sensor IaC AzureResourceManager Sensor [iac] (done) | time=2620ms
+INFO: Sensor JavaScript/TypeScript analysis [javascript]
+INFO: Detected os: Linux arch: amd64 alpine: false. Platform: LINUX_X64
+INFO: Using embedded Node.js runtime
+INFO: Using Node.js executable: '/var/jenkins_home/.sonar/js/node-runtime/node'.
+INFO: Memory configuration: OS (15950 MB), Node.js (4144 MB).
+INFO: Found 0 tsconfig.json file(s): []
+INFO: Creating TypeScript program
+INFO: TypeScript configuration file /tmp/tmp-33286-TLcMcL965NER
+INFO: 8 source files to be analyzed
+INFO: Creating TypeScript program (done) | time=7495ms
+INFO: Starting analysis with current program
+INFO: 1/8 file analyzed, current file: /var/jenkins_home/workspace/test-devops@2/shared/middleware/validateSchema.js
+INFO: Analyzed 8 file(s) with current program
+INFO: 8/8 source files have been analyzed
+INFO: Hit the cache for 0 out of 8
+INFO: Miss the cache for 8 out of 8: ANALYSIS_MODE_INELIGIBLE [8/8]
+INFO: Sensor JavaScript/TypeScript analysis [javascript] (done) | time=62264ms
+INFO: Sensor JavaScript inside YAML analysis [javascript]
+INFO: No input files found for analysis
+INFO: Hit the cache for 0 out of 0
+INFO: Miss the cache for 0 out of 0
+INFO: Sensor JavaScript inside YAML analysis [javascript] (done) | time=73ms
+INFO: Sensor CSS Rules [javascript]
+INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+INFO: Sensor CSS Rules [javascript] (done) | time=11ms
+INFO: Sensor C# Project Type Information [csharp]
+INFO: Sensor C# Project Type Information [csharp] (done) | time=2ms
+INFO: Sensor C# Analysis Log [csharp]
+INFO: Sensor C# Analysis Log [csharp] (done) | time=145ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=1ms
+INFO: Sensor HTML [web]
+INFO: Sensor HTML [web] (done) | time=28ms
+INFO: Sensor TextAndSecretsSensor [text]
+INFO: 13 source files to be analyzed
+INFO: 13/13 source files have been analyzed
+INFO: Sensor TextAndSecretsSensor [text] (done) | time=8345ms
+INFO: Sensor VB.NET Project Type Information [vbnet]
+INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+INFO: Sensor VB.NET Analysis Log [vbnet]
+INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=98ms
+INFO: Sensor VB.NET Properties [vbnet]
+INFO: Sensor VB.NET Properties [vbnet] (done) | time=0ms
+INFO: Sensor IaC Docker Sensor [iac]
+INFO: 1 source file to be analyzed
+INFO: 1/1 source file has been analyzed
+INFO: Sensor IaC Docker Sensor [iac] (done) | time=474ms
+INFO: ------------- Run sensors on project
+INFO: Sensor Analysis Warnings import [csharp]
+INFO: Sensor Analysis Warnings import [csharp] (done) | time=2ms
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=144ms
+INFO: CPD Executor 2 files had no CPD blocks
+INFO: CPD Executor Calculating CPD for 6 files
+INFO: CPD Executor CPD calculation finished (done) | time=575ms
+INFO: Analysis report generated in 2656ms, dir size=217.9 kB
+INFO: Analysis report compressed in 1726ms, zip size=44.8 kB
+INFO: Analysis report uploaded in 531ms
+INFO: ANALYSIS SUCCESSFUL, you can find the results at: http://sonarqube:9000/dashboard?id=demo-devops
+INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+INFO: More about the report processing at http://sonarqube:9000/api/ce/task?id=93a8649a-509e-4209-99b4-79d0eb69873d
+INFO: Analysis total time: 2:07.067 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 2:18.056s
+INFO: Final Memory: 21M/88M
+INFO: ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withSonarQubeEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Quality Gate)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 20 min
+[Pipeline] {
+[Pipeline] waitForQualityGate
+Checking status of SonarQube task '93a8649a-509e-4209-99b4-79d0eb69873d' on server 'SonarQ'
+SonarQube task '93a8649a-509e-4209-99b4-79d0eb69873d' status is 'SUCCESS'
+SonarQube task '93a8649a-509e-4209-99b4-79d0eb69873d' completed. Quality gate is 'OK'
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Dockerize)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker build -t darkedson/test-repo .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 148B 0.0s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/node:18
+#2 DONE 6.9s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 32B 0.0s
+#3 transferring context: 133B 0.2s done
+#3 DONE 0.3s
+
+#4 [1/5] FROM docker.io/library/node:18@sha256:2a13079c6393cd19adfd8d362fac004b2d0eed462f3c3fedfad2c0d0de17b429
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.45MB 4.3s done
+#5 DONE 4.5s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY package*.json ./
+#7 CACHED
+
+#8 [4/5] RUN npm install
+#8 CACHED
+
+#9 [5/5] COPY . .
+#9 DONE 17.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 7.8s done
+#10 writing image sha256:f5ae921d4b4c29f6b543e64197126a6d19bfc4d6d9a44d865ec877e32944239f 0.0s done
+#10 naming to docker.io/darkedson/test-repo 0.1s done
+#10 DONE 7.9s
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push to DockerHub)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withDockerRegistry
+$ docker login -u darkedson -p ******** https://index.docker.io/v1/
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/jenkins_home/workspace/test-devops@2@tmp/ccce3ec0-29d1-406b-9244-79ff7f54d2fe/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag darkedson/test-repo index.docker.io/darkedson/test-repo:52
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker push index.docker.io/darkedson/test-repo:52
+The push refers to repository [docker.io/darkedson/test-repo]
+be2b911b4338: Preparing
+6f82d0daf140: Preparing
+b7aabf23ce40: Preparing
+9732946268f5: Preparing
+b895cd1f6386: Preparing
+a9529a7a62d0: Preparing
+1d8d938c0222: Preparing
+e27cf0956124: Preparing
+d43f876e6f21: Preparing
+9f843c569746: Preparing
+bcd354c940e1: Preparing
+1dae5147cd29: Preparing
+1d8d938c0222: Waiting
+e27cf0956124: Waiting
+d43f876e6f21: Waiting
+9f843c569746: Waiting
+bcd354c940e1: Waiting
+1dae5147cd29: Waiting
+a9529a7a62d0: Waiting
+6f82d0daf140: Layer already exists
+b895cd1f6386: Layer already exists
+b7aabf23ce40: Layer already exists
+9732946268f5: Layer already exists
+e27cf0956124: Layer already exists
+a9529a7a62d0: Layer already exists
+d43f876e6f21: Layer already exists
+1d8d938c0222: Layer already exists
+9f843c569746: Layer already exists
+1dae5147cd29: Layer already exists
+bcd354c940e1: Layer already exists
+be2b911b4338: Pushed
+52: digest: sha256:e0d34dac6e48c0125a8ab7905e6adbfee5d6167e33079fbc31488776dcb5e26d size: 2843
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withDockerRegistry
+$ docker login -u darkedson -p ******** https://index.docker.io/v1/
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/jenkins_home/workspace/test-devops@2@tmp/1cf312ad-a597-4710-bc86-1cbf06ea8247/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag darkedson/test-repo index.docker.io/darkedson/test-repo:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker push index.docker.io/darkedson/test-repo:latest
+The push refers to repository [docker.io/darkedson/test-repo]
+be2b911b4338: Preparing
+6f82d0daf140: Preparing
+b7aabf23ce40: Preparing
+9732946268f5: Preparing
+b895cd1f6386: Preparing
+a9529a7a62d0: Preparing
+1d8d938c0222: Preparing
+e27cf0956124: Preparing
+d43f876e6f21: Preparing
+9f843c569746: Preparing
+bcd354c940e1: Preparing
+1dae5147cd29: Preparing
+a9529a7a62d0: Waiting
+1d8d938c0222: Waiting
+e27cf0956124: Waiting
+d43f876e6f21: Waiting
+9f843c569746: Waiting
+1dae5147cd29: Waiting
+bcd354c940e1: Waiting
+6f82d0daf140: Layer already exists
+b895cd1f6386: Layer already exists
+b7aabf23ce40: Layer already exists
+be2b911b4338: Layer already exists
+9732946268f5: Layer already exists
+a9529a7a62d0: Layer already exists
+1d8d938c0222: Layer already exists
+e27cf0956124: Layer already exists
+9f843c569746: Layer already exists
+d43f876e6f21: Layer already exists
+bcd354c940e1: Layer already exists
+1dae5147cd29: Layer already exists
+latest: digest: sha256:e0d34dac6e48c0125a8ab7905e6adbfee5d6167e33079fbc31488776dcb5e26d size: 2843
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Kubernetes)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ kubectl apply -f deployment-config.yaml
+deployment.apps/mi-aplicacion created
+service/mi-aplicacion created
+horizontalpodautoscaler.autoscaling/mi-aplicacion created
+configmap/mi-configmap created
+secret/mi-secret created
+ingress.networking.k8s.io/mi-ingress created
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Check Deployment)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ kubectl get pods
+NAME                             READY   STATUS              RESTARTS   AGE
+mi-aplicacion-7d788545c8-7zzp2   0/1     ContainerCreating   0          24s
+mi-aplicacion-7d788545c8-hxjwv   0/1     ContainerCreating   0          24s
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Check Health)
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/test-devops@2
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github2
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test-devops@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:DarkEdson/demo-devops-nodejs.git # timeout=10
+Fetching upstream changes from git@github.com:DarkEdson/demo-devops-nodejs.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:DarkEdson/demo-devops-nodejs.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+Checking out Revision 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4f39f9f2343b2d30c4ac312e9be68d1472d4d8a0 # timeout=10
+Commit message: "funciona ya con ingress"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sleep
+Sleeping for 1 min 0 sec
+[Pipeline] sh
++ kubectl get service mi-aplicacion -o jsonpath={.spec.clusterIP}
+[Pipeline] sh
++ curl -s -o /dev/null -w %{http_code} --max-time 30 http://10.102.164.71/health
+[Pipeline] echo
+Health check passed
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
