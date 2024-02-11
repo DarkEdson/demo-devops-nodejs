@@ -120,4 +120,3 @@ spec:
             name: mi-aplicacion
             port:
               number: 80
-  externalTrafficPolicy: Local
