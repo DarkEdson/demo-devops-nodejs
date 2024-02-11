@@ -1,0 +1,4 @@
+docker-compose.yml
+Jenkinsfile
+nginx.conf
+sonar-project.properties
