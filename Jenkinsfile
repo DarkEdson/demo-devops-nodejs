@@ -87,6 +87,13 @@ pipeline {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
                         docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").push("${env.BUILD_NUMBER}")
                     }
+                    dockerImage.inside {
+                        sh "docker tag ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:latest"
+                    }
+                    
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
+                        docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").push("latest")
+                    }
                 }
             }
         }
