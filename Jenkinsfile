@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'Node18.15'
+    }
 
     environment {
         DOCKER_REGISTRY = 'darkedson/test-repo'
@@ -28,18 +31,14 @@ pipeline {
             }
         }
         stage('Install dependencies') {
-            agent {
-                label 'Node18.15'
-            }
+            agent any
             steps {
                 sh 'npm install'
             }
         }
         
         stage('Run tests') {
-            agent {
-                label 'Node18.15'
-            }
+            agent any
             steps {
                 sh 'npm test'
             }
