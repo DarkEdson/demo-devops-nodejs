@@ -12,6 +12,7 @@ pipeline {
 
     stages {
         stage('Install kubectl') {
+            agent any
             steps {
                 // Instalar kubectl en el contenedor de Jenkins
                 sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
