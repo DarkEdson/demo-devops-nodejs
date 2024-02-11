@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../..';
+import { app, server } from '../..';
 import sequelize from '../../shared/database/database';
 
 beforeAll((done) => {
