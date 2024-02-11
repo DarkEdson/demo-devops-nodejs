@@ -6,12 +6,17 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.js", "!**/node_modules/**", "!**/coverage/**"],
     "transform": {
       "^.+\\.js?$": "babel-jest"
-    }
+    },
+    "coverageReporters": ["json", "lcov", "text", "clover"]
   },
   "author": "Devsu",
   "dependencies": {
@@ -25,7 +30,9 @@
     "@types/express": "4.17.17",
     "babel-jest": "29.5.0",
     "dotenv": "16.0.3",
-    "jest": "29.5.0",
-    "supertest": "6.3.3"
+    "jest": "^29.5.0",
+    "jest-cli": "^29.7.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.3.3"
   }
 }

@@ -37,11 +37,20 @@ pipeline {
             }
         }
         
-        stage('Run tests') {
+        stage('Run tests and generate coverage report') {
             agent any
             steps {
                 sh 'npm test'
             }
+            post {
+        always {
+            // Generar informe de cobertura con JaCoCo
+            sh 'npm install -g nyc'
+            sh 'nyc --reporter=lcov --report-dir=coverage npm test'
+            // Archivar los resultados del informe de cobertura
+            publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'coverage', reportFiles: 'index.html'], reportName: 'Code Coverage Report')
+        }
+    }
         }
         
         stage('SonarQube analysis') {
@@ -85,11 +94,30 @@ pipeline {
             }
         }
         
-        stage('Run Docker Container') {
+        stage('Deploy to Kubernetes') {
+            agent any
+            steps {
+                sh 'kubectl apply -f deployment-config.yaml'
+            }
+        }
+
+        stage('Check Deployment') {
+            agent any
+            steps {
+                sh 'kubectl get pods' 
+            }
+        }
+
+        stage('Check Health') {
             agent any
             steps {
                 script {
-                    docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").run("--name ${DOCKER_IMAGE_NAME}-${env.BUILD_NUMBER} -d")
+                    def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' http://mi-aplicacion.com/health", returnStdout: true).trim()
+                    if (response == '200') {
+                        echo 'Health check passed'
+                    } else {
+                        error "Health check failed: HTTP status code $response"
+                    }
                 }
             }
         }

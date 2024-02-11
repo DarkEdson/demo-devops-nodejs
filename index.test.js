@@ -64,4 +64,9 @@ describe('User', () => {
         expect(response.status).toBe(201)
         expect(response.body).toEqual({...data, "id": 1})
     })
+    test('Health check', async () => {
+        const response = await request(app).get('/health');
+        expect(response.status).toBe(200);
+        expect(response.text).toBe('Health check OK');
+      });
 })
