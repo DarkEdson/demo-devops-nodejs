@@ -1,6 +1,12 @@
 import request from 'supertest';
 import { app } from '../..';
+import sequelize from '../../shared/database/database';
 
+beforeAll((done) => {
+    sequelize.sync({ force: true }).then(() => {
+      done(); 
+    });
+  });
 describe('Health Check', () => {
   test('GET /health should return 200 OK', async () => {
     const response = await request(app).get('/health');
