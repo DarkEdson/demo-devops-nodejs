@@ -4,6 +4,11 @@ import User from './users/model.js'
 import sequelize from './shared/database/database'
 import { Sequelize } from 'sequelize'
 
+beforeAll((done) => {
+    sequelize.sync({ force: true }).then(() => {
+      done(); 
+    });
+  });
 describe('User', () => {
     let data
     let mockedSequelize
