@@ -6,8 +6,6 @@ pipeline {
         NODE_IMAGE = 'Node18.15'
         SONARQUBE_SERVER = 'SonarQ'
         DOCKER_IMAGE_NAME = 'devops-nodejs'
-        DOCKER_HUB_USERNAME = credentials('darkedson')
-        DOCKER_HUB_PASSWORD = credentials('Sh@kug@n2')
     }
 
     stages {
@@ -27,68 +25,68 @@ pipeline {
                 sh 'mv ./kubectl /usr/local/bin/kubectl'
             }
         }
-        // stage('Install dependencies') {
-        //     agent {
-        //         label 'Node18.15'
-        //     }
-        //     steps {
-        //         sh 'npm install'
-        //     }
-        // }
+        stage('Install dependencies') {
+            agent {
+                label 'Node18.15'
+            }
+            steps {
+                sh 'npm install'
+            }
+        }
         
-        // stage('Run tests') {
-        //     agent {
-        //         label 'Node18.15'
-        //     }
-        //     steps {
-        //         sh 'npm test'
-        //     }
-        // }
+        stage('Run tests') {
+            agent {
+                label 'Node18.15'
+            }
+            steps {
+                sh 'npm test'
+            }
+        }
         
-        // stage('SonarQube analysis') {
-        //     agent any
-        //     steps {
-        //         withSonarQubeEnv(SONARQUBE_SERVER) {
-        //             sh 'sonar-scanner'
-        //         }
-        //     }
-        // }
+        stage('SonarQube analysis') {
+            agent any
+            steps {
+                withSonarQubeEnv(SONARQUBE_SERVER) {
+                    sh 'sonar-scanner'
+                }
+            }
+        }
         
-        // stage("Quality Gate") {
-        //     steps {
-        //         timeout(time: 20, unit: 'MINUTES') {
-        //             waitForQualityGate abortPipeline: true
-        //         }
-        //     }
-        // }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 20, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         
-        // stage('Dockerize') {
-        //     agent any
-        //     steps {
-        //         script {
-        //             docker.build("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}")
-        //         }
-        //     }
-        // }
+        stage('Dockerize') {
+            agent any
+            steps {
+                script {
+                    docker.build("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}")
+                }
+            }
+        }
         
-        // stage('Push to DockerHub') {
-        //     agent any
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
-        //                 docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").push("${env.BUILD_NUMBER}")
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Push to DockerHub') {
+            agent any
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
+                        docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").push("${env.BUILD_NUMBER}")
+                    }
+                }
+            }
+        }
         
-        // stage('Run Docker Container') {
-        //     agent any
-        //     steps {
-        //         script {
-        //             docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").run("--name ${DOCKER_IMAGE_NAME}-${env.BUILD_NUMBER} -d")
-        //         }
-        //     }
-        // }
+        stage('Run Docker Container') {
+            agent any
+            steps {
+                script {
+                    docker.image("${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}").run("--name ${DOCKER_IMAGE_NAME}-${env.BUILD_NUMBER} -d")
+                }
+            }
+        }
     }
 }
