@@ -8,6 +8,10 @@ beforeAll((done) => {
     });
   });
 describe('Health Check', () => {
+
+    afterAll(async () => {
+        server.close()
+    })
   test('GET /health should return 200 OK', async () => {
     const response = await request(app).get('/health');
     expect(response.status).toBe(200);
