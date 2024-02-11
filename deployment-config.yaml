@@ -104,6 +104,10 @@ metadata:
   name: mi-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx" 
+    nginx.ingress.kubernetes.io/enable-global-auth: "false"  
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"  
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
   - host: mi-aplicacion.com
@@ -116,3 +120,4 @@ spec:
             name: mi-aplicacion
             port:
               number: 80
+  externalTrafficPolicy: Local

@@ -97,6 +97,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             agent any
             steps {
+                sh 'kubectl delete -f deployment-config.yaml'
                 sh 'kubectl apply -f deployment-config.yaml'
             }
         }
@@ -112,7 +113,16 @@ pipeline {
             agent any
             steps {
                 script {
-                    def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' --max-time 90 http://mi-aplicacion.com/health", returnStdout: true).trim()
+                    // Esperar un minuto
+                    sleep time: 60, unit: 'SECONDS'
+
+                    // Obtener la IP interna del servicio "mi-aplicacion"
+                    def serviceIP = sh(script: "kubectl get service mi-aplicacion -o jsonpath='{.spec.clusterIP}'", returnStdout: true).trim()
+
+                    // Hacer curl a la IP interna del servicio /health
+                    def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' --max-time 30 http://${serviceIP}/health", returnStdout: true).trim()
+
+                    // Verificar el código de estado de la respuesta
                     if (response == '200') {
                         echo 'Health check passed'
                     } else {
